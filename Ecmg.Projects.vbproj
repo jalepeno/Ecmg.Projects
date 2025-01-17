@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Projects</RootNamespace>
+    <TargetFrameworks>net8.0;net48</TargetFrameworks>
+    <Version>1.0.5</Version>
+    <Company>Conteage</Company>
+    <Authors>magbender</Authors>
+    <Description>Ecmg.Projects.dll is a .NET Core library for organizing work to perform to perform on documents into projects and jobs.</Description>
+    <Copyright>Conteage Corp</Copyright>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+    <PackageReadmeFile></PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Containers\CSVContainer.vb" />
+    <Compile Remove="Containers\OLEDBContainer.vb" />
+    <Compile Remove="Extensions\IProjectExtension.vb" />
+    <Compile Remove="Extensions\ProjectExtension.vb" />
+    <Compile Remove="Interfaces\INotification.vb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="SQLScripts\ContentManagerCreateDatabase.sql" />
+    <None Remove="SQLScripts\ContentManagerCreateDatabaseWithFileStream.sql" />
+    <None Remove="SQLScripts\ContentManagerCreateDeltaTable.sql" />
+    <None Remove="SQLScripts\ContentManagerCreateDeltaTableWithOperation.sql" />
+    <None Remove="SQLScripts\ContentManagerCreateStoredProcedures.sql" />
+    <None Remove="SQLScripts\ContentManagerCreateTables.sql" />
+    <None Remove="SQLScripts\ContentManagerCreateTypesAndProcedures.sql" />
+    <None Remove="SQLScripts\CreateCatalogDatabase.sql" />
+    <None Remove="SQLScripts\CreateCatalogProcedures.sql" />
+    <None Remove="SQLScripts\CreateCatalogTables.sql" />
+    <None Remove="SQLScripts\GetDbPermissions.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="SQLScripts\ContentManagerCreateDatabase.sql" />
+    <EmbeddedResource Include="SQLScripts\ContentManagerCreateDatabaseWithFileStream.sql" />
+    <EmbeddedResource Include="SQLScripts\ContentManagerCreateDeltaTable.sql" />
+    <EmbeddedResource Include="SQLScripts\ContentManagerCreateDeltaTableWithOperation.sql" />
+    <EmbeddedResource Include="SQLScripts\ContentManagerCreateStoredProcedures.sql" />
+    <EmbeddedResource Include="SQLScripts\ContentManagerCreateTables.sql" />
+    <EmbeddedResource Include="SQLScripts\ContentManagerCreateTypesAndProcedures.sql" />
+    <EmbeddedResource Include="SQLScripts\CreateCatalogDatabase.sql" />
+    <EmbeddedResource Include="SQLScripts\CreateCatalogProcedures.sql" />
+    <EmbeddedResource Include="SQLScripts\CreateCatalogTables.sql" />
+    <EmbeddedResource Include="SQLScripts\GetDbPermissions.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MigrationDatabaseTemplate\" />
+    <Folder Include="Notifications\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ecmg.Documents" Version="1.0.10" />
+    <PackageReference Include="Ecmg.Operations" Version="1.0.5" />
+    <PackageReference Include="EPPlus" Version="7.5.3" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
+  </ItemGroup>
+
+</Project>
